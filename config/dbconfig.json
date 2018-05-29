@@ -1,0 +1,16 @@
+{
+    "DEV":{
+      "db":"mongodb",
+      "dbcodeconnection":"mongoengine",
+      "dbname":"mwallet_test",
+      "host":"localhost",
+      "port":27017
+    },
+    "PROD":{
+      "db":"mongodb",
+      "dbcodeconnection":"mongoengine",
+      "dbname":"mwallet",
+      "host":"localhost",
+      "port":27017
+    }
+}

@@ -1,0 +1,190 @@
+/*
+	Name: HTML table
+	Date: July 2014
+	Description: Learning CSS3
+	Version: 1.0
+	Author: N.Ramsing
+*/
+ 
+/* Imports 
+@import url("reset.css");
+@import url("global-forms.css");  */
+ 
+/***** Global *****/
+/* Body */
+body {
+		/* background: #F5F4EF url('../images/bg.png');
+		color: #000305; */
+        color:#000000;
+        background-color:#FFFFFF;
+		font-size: 87.5%; /* Base font size: 14px */
+		font-family: 'Trebuchet MS', 'Trebuchet', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', 'Arial', serif;
+		line-height: 1.429;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+
+/* Headings */
+h2 {font-size: 1.571em}	/* 22px */
+h3 {font-size: 1.429em}	/* 20px */
+h4 {font-size: 1.286em}	/* 18px */
+h5 {font-size: 1.143em}	/* 16px */
+h6 {font-size: 1em}	/* 14px */
+ 
+h2, h3, h4, h5, h6 {
+	font-weight: 400;
+	line-height: 1.1;
+	margin-bottom: .8em;
+}    
+
+
+body {
+  margin: 40px;
+}
+    .header {
+        grid-area: header;
+    }
+
+    .title {
+        grid-area: title;
+    }
+
+    .content_form {
+        grid-area: content_form;
+    }
+
+    .content_response {
+        grid-area: content_response;
+    }
+
+    .footer {
+        grid-area: footer;
+    }
+
+    .wrapper {
+        background-color: #fff;
+        color: #444;
+    }
+
+  .wrapper {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-areas:
+     "header"
+     "footer"
+     "title"
+     "content_form"
+     "content_response";
+  }
+
+
+/*    @media only screen and (min-width: 500px)  {
+    .wrapper {
+
+        grid-template-columns: 2fr 2fr;
+        grid-template-areas:
+      "header   header"
+        "title  title"
+        "content_form content_graph"
+        "content_table" "content_table"
+        "footer footer";
+      }
+    }    
+
+    @media only screen and (min-width: 600px)   {
+      .wrapper {
+          grid-gap: 20px;
+          grid-template-columns: 2fr 2fr 1fr;
+          grid-template-areas:
+          "header header header"
+          "title title title"
+          "content_form content_graph"
+          "content_table" "content_table"
+          "footer  footer footer";
+
+        }
+    }       
+    */
+
+.box {
+  background-color: #FFFFFF;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 150%; 
+}
+
+.header,
+.footer {
+  background-color: #046380;
+}
+
+.title {
+  background-color: #ccc;
+  color: #046380;
+}
+
+.content_form,
+.content_response {
+  background-color: #FFFFFF;
+  border: 1px solid #046380;
+  color: #444;
+}
+
+/* FORM in content_form section 
+https://gridbyexample.com/examples/example21/
+*/
+form {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: 1fr 1fr;
+  background: #FFFFFF;  
+  border: 1px solid #046380;
+  /*margin: 2rem auto 0 auto;
+  /* max-width: 600px;  */
+}
+
+
+label {
+  text-align: right;
+  font-size: 70%; /* Base font size: 14px */
+  grid-column: 1 / 2;
+}
+
+input,
+select {
+ grid-column: 2 / 3; 
+  /* padding: 0.7em;
+  margin-bottom: 0.5rem;  */
+}
+
+input:focus {
+  outline: 2px solid lightblue;
+}
+select:focus {
+  outline: 2px solid lightblue;
+}
+
+.submitButton {
+  background-color:#7892c2;
+  -moz-border-radius:14px;
+  -webkit-border-radius:14px;
+  border-radius:14px;
+  border:1px solid #4e6096;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  padding:16px 31px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #283966;
+}
+.submitButton:hover {
+  background-color:#476e9e;
+}
+.submitButton:active {
+  position:relative;
+  top:1px;
+}
