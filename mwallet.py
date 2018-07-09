@@ -107,47 +107,16 @@ def controller(accountid, routedirection, action_value):
     return response
 
 
-#Register the account: creates the account with person name
-# NOTE:  ONLY ONE ACCOUNT PER MOBILE PHONE!!!!
-# def registeraccount(accountid, personname):
-#     print "registering account"
-#     ca_account = Account()
-#     #print "db: {}" .format(db)
-#     #response_reg = ca_account.registeraccount(db, accountid, personname)
-#     response_reg = ca_account.registeraccount(accountid, personname)
-#     return response_reg
-
-# #Make deposit
-# def makedeposit(accountid, amount):         #mwallet.py
-#     print "making deposit"
-#     ca_account = Account()
-#     response_req = ca_account.deposit(accountid, amount)
-#     return response_req
-
-# #Make withdrawal
-# def makewithdrawal(accountid, amount):
-#     print "making withdrawl"
-#     ca_account = Account()
-#     print "retrieve account"
-#     #found = ca_account.getSingleAccount(db, accountid)
-#     found = ca_account.account_exists(accountid)
-#     if found == True:       #found account and try to make deposit
-#         print "withdraw"
-#         response_req = ca_account.withdraw(amount)
-#     else:                   #could not find account
-#         response_req = "Could not find acccount {}. Could not perform deposit of {}." .format(accountid, amount)
-#     return response_req
-
 
 
 if __name__ == '__main__':
     # To run the server, type-in $ python server.py
     try:
-
         with open('config\dbconfig.json', 'r') as json_data_file:
             dbconfig = json.load(json_data_file)
-        dbconfig_environ = dbconfig['DEV']
-        #db = \
+        #dbconfig_environ = dbconfig['DEV']
+        dbconfig_environ = dbconfig['PRODAzure']
+        #db =
         mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
     except:    #errors.ConnectionFailure:
         print '===== DB ERROR!  Start the MongoBD, silly guy!'
