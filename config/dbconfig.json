@@ -12,13 +12,6 @@
       "dbname":"mwallet",
       "host":"localhost",
       "port":27017
-    },
-     "PRODAzure":{
-      "db":"mongodb",
-      "dbcodeconnection":"mongoengine",
-      "dbname":"mwallet",
-      "host":"mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
-      "port":10255
     }
 }
 
