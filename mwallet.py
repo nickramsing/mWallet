@@ -7,6 +7,7 @@ import sys
 #import pymongo
 import mongoengine as mongoengine
 from twilio.twiml.messaging_response import MessagingResponse
+import logging
 
 
 @route('/static/<filename>', name='static')
@@ -23,12 +24,15 @@ def testmessage():
 def testmessage():
     #returns exercise data from newexercise.tpl in a DICT
     print '=== POST came through with data===='
+    logger = logging.getLogger(__name__)
+    logger.info('=== POST came through with data====')
     messagedata = dict(request.params)
     print messagedata     #looks like DICT
     phonenumber = request.forms.get("account")
     smsmessage = request.forms.get("message")
     messagedata = smsmessage.split(" ", 2)  # maxsplit: 2 expect anything over 2 is wrong; validate 1 & 2
     ########### ### validate smsmessage - ensure complies with expectations
+    logger.info(type(messagedata))
     print type(messagedata)
     if len(messagedata) == 2:
         actiontoperform = str(messagedata[0]).upper()        #ACTION TO BE PERFORMED: first
@@ -50,12 +54,15 @@ def sms():
     #       From: phone number or channel address
     #       Body: message body
     #       Other interesting data: FromCity, FromState, FromCountry
+    logger = logging.getLogger(__name__)
     messagebody = request.forms.get('Body', None)
     print messagebody
+    logger.info(messagebody)
     phonenumber = request.forms.get('From', None)
     location_country = request.forms.get('FromCountry', None)
     location_city = request.forms.get('FromCity', None)
     print "LOCATION country {} city {}" .format(location_country, location_city)
+    logger.info("LOCATION country {} city {}" .format(location_country, location_city))
     ### IMPROVE CAPTURE OF THE MESSAGE BODY - what is there?
     # perhaps log message body here
     messagedata = messagebody.split(" ", 2)  # maxsplit: 2 expect anything over 2 is wrong; validate 1 & 2
