@@ -8,6 +8,7 @@ import sys
 import mongoengine as mongoengine
 from twilio.twiml.messaging_response import MessagingResponse
 import logging
+from applog.loggingmodule import setlogger
 
 
 @route('/static/<filename>', name='static')
@@ -85,6 +86,8 @@ def sms():
 
 
 def controller(accountid, routedirection, action_value):
+    logger = logging.getLogger(__name__)
+    logger.info('in controller determing with route to follow')
     # Manages the processing of the SMS?Form data to the appropriate action: REGISTER, DEPOSIT, WITHDRAW, TRANSFER
     # Potential to capture COUNTRY and adapt for multiple contracts/project
     # parameters: phonenumber==accountid, action to perform== routedirection, value associate with action == action_value
@@ -110,7 +113,8 @@ def controller(accountid, routedirection, action_value):
     else:
         response = "DO NOT UNDERSTAND DESIRED ACTION.  You can REGISTER, DEPOSIT and WITHDRAW"
         #need exception handling?!!!
-    print "response from controller: {}" .format(response)
+    #print "response from controller: {}" .format(response)
+    logger.info('response from controller: {}' .format(response))
     return response
 
 
@@ -118,6 +122,7 @@ def controller(accountid, routedirection, action_value):
 
 if __name__ == '__main__':
     # To run the server, type-in $ python server.py
+    setlogger()     #introduces logging configuration to be used with logging
     try:
         with open('config\dbconfig.json', 'r') as json_data_file:
             dbconfig = json.load(json_data_file)
