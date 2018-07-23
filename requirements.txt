@@ -1,16 +1,9 @@
-http://pip.readthedocs.io/en/latest/reference/pip_install/#pip-install-examples
-http://pip.readthedocs.io/en/latest/user_guide/#requirements-files
-
-$ pip install bottle
-$ pip install json
-$ pip install sys
-$ pip install mongoengine
-$ pip install twilio.twiml.messaging_response
-$ pip install datetime
-
-from bottle import route, request, run, get, post, template, SimpleTemplate, static_file, url
-import json
-import sys
-import mongoengine as mongoengine
-from twilio.twiml.messaging_response import MessagingResponse
-import datetime
+####### mWallet - requirements.txt #######
+#### installation: pip install -r requirements.txt
+###### Requirements without Version Specifiers ######
+bottle
+json
+sys
+mongoengine
+twilio.twiml.messaging_response
+datetime
