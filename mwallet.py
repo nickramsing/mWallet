@@ -24,17 +24,17 @@ def testmessage():
 @post('/testmessage')
 def testmessage():
     #returns exercise data from newexercise.tpl in a DICT
-    print '=== POST came through with data===='
+    print( '=== POST came through with data====')
     logger = logging.getLogger(__name__)
     logger.info('=== POST came through with data====')
     messagedata = dict(request.params)
-    print messagedata     #looks like DICT
+    print( messagedata)     #looks like DICT
     phonenumber = request.forms.get("account")
     smsmessage = request.forms.get("message")
     messagedata = smsmessage.split(" ", 2)  # maxsplit: 2 expect anything over 2 is wrong; validate 1 & 2
     ########### ### validate smsmessage - ensure complies with expectations
     logger.info(type(messagedata))
-    print type(messagedata)
+    print( type(messagedata))
     if len(messagedata) == 2:
         actiontoperform = str(messagedata[0]).upper()        #ACTION TO BE PERFORMED: first
         action_value = str(messagedata[1])                  #expected text and value:  REGISTER: name; DEPOSIT/WITHDRAW: amount
@@ -57,26 +57,26 @@ def sms():
     #       Other interesting data: FromCity, FromState, FromCountry
     logger = logging.getLogger(__name__)
     messagebody = request.forms.get('Body', None)
-    print messagebody
+    print( messagebody)
     logger.info(messagebody)
     phonenumber = request.forms.get('From', None)
     location_country = request.forms.get('FromCountry', None)
     location_city = request.forms.get('FromCity', None)
-    print "LOCATION country {} city {}" .format(location_country, location_city)
+    print( "LOCATION country {} city {}" .format(location_country, location_city))
     logger.info("LOCATION country {} city {}" .format(location_country, location_city))
     ### IMPROVE CAPTURE OF THE MESSAGE BODY - what is there?
     # perhaps log message body here
     messagedata = messagebody.split(" ", 2)  # maxsplit: 2 expect anything over 2 is wrong; validate 1 & 2
     ########### ### validate smsmessage - ensure complies with expectations
-    print type(messagedata)
+    print( type(messagedata))
     if len(messagedata) == 2:
         actiontoperform = str(messagedata[0]).upper()        #ACTION TO BE PERFORMED: first
         action_value = str(messagedata[1])                  #expected text and value:  REGISTER: name; DEPOSIT/WITHDRAW: amount
     elif len(messagedata) ==1:
         actiontoperform = str(messagedata[0]).upper()  # ACTION TO BE PERFORMED: first
         action_value = ""
-    print "route-action: {}".format(actiontoperform)
-    print "value: {}".format(action_value)
+    print( "route-action: {}".format(actiontoperform))
+    print( "value: {}".format(action_value))
     response = controller(phonenumber, actiontoperform, action_value)             #directs for appropriate action
     #################################
     # Start TwiML response
@@ -113,7 +113,7 @@ def controller(accountid, routedirection, action_value):
     else:
         response = "DO NOT UNDERSTAND DESIRED ACTION.  You can REGISTER, DEPOSIT and WITHDRAW"
         #need exception handling?!!!
-    #print "response from controller: {}" .format(response)
+    #print( "response from controller: {}" .format(response))
     logger.info('response from controller: {}' .format(response))
     return response
 
@@ -131,6 +131,6 @@ if __name__ == '__main__':
         #db =
         mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
     except:    #errors.ConnectionFailure:
-        print '===== DB ERROR!  Start the MongoBD, silly guy!'
+        print( '===== DB ERROR!  Start the MongoBD, silly guy!')
         sys.exit('MongoDB database connection requires MongoDB to be running.  Start the process')
     run(host='localhost', port=8080, reloader=True)

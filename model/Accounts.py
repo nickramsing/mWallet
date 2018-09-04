@@ -1,6 +1,6 @@
 from services.AccountServices import *
 import mongoengine as mongoengine
-from Transactions import Transaction     #, Transaction
+from model.Transactions import Transaction     #, Transaction
 import datetime
 
 
@@ -26,44 +26,6 @@ class Account(mongoengine.Document):
     }
 
 
-    # def withdraw(self, aamount):
-    #     #withdraw funds from account: must have sufficient balance. Balance cannot be negative
-    #     if not self.validateamount(aamount):
-    #         response = 'Cannot be transacted for {}. Amount is a negative number. Withdrawal attempt: {}'.format(self.accountnumber, aamount)
-    #         return response
-    #     if self.balance - aamount < self.minbalance:
-    #         response = 'Cannot be transacted for {}. Resulting in below minimum balance. Withdrawal attempt: {}' .format(self.accountnumber, amount)
-    #         return response
-    #     else:
-    #         self.balance -= aamount
-    #         #####################################################
-    #         trans = Transaction(typetrans="WITHDRAW", amount=aamount, balance=self.balance)
-    #         self.transactions.append(trans)  # add transaction to transactions list under Account
-    #         self.save_account()
-    #         response = "Withrawal successful: {}. Balance is now {}" .format(aamount, self.balance)
-    #         return response
-
-
-    # def deposit(self, aaccountid, aamount):
-    #     #deposit funds to account: must be postive amount
-    #     acs = AccountServices()
-    #     if not acs.account_exists(aaccountid):      #If account does not exist... then cannot make deposit
-    #     #if not self.account_exists(aaccountid):
-    #         response = 'Cannot perform action. Account does not exist for {} - accountid: {} ' .format(aaccountid)
-    #         return response
-    #     ##retrieve account
-    #     self.__objects.get(aaccountid)
-    #     if not self.validateamount(aamount):
-    #         response = 'Cannot be transacted for {}. Amount is a negative number. Deposit attempt: {}'.format(self.accountnumber, aamount)
-    #         return response
-    #     self.balance += aamount
-    #    ######### self.save_transaction("Deposit", amount)
-    #     trans = Transaction(typetrans="DEPOSIT", amount=aamount, balance=self.balance)
-    #     self.transactions.append(trans)     #add transaction to transactions list under Account
-    #     self.save_account()
-    #     response = "Deposit successful: {}. Balance is now {}".format(aamount, self.balance)
-    #     return response
-
 
     def validateamount(self, transamount):
         if transamount < 0:
@@ -73,7 +35,7 @@ class Account(mongoengine.Document):
 
 
     def getbalance(self):
-        print 'Balance request: Balance is: {} ' .format(self.balance)
+        print( 'Balance request: Balance is: {} ' .format(self.balance))
         return self.balance
 
 
@@ -86,5 +48,5 @@ class Account(mongoengine.Document):
             self.save()
             return True
         except:
-            print "exception occurred"
+            print( "exception occurred")
             return False

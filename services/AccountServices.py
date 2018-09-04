@@ -29,10 +29,10 @@ def account_register(aaccountid, personname):
                 newaccount.save()  # store an account
                 response = 'New account {} created for {}. Initial balance: {}'.format(newaccount.accountid, newaccount.name, newaccount.balance)
             except Exception as e:
-                print "LOG: Could not register and save new account".format(aaccountid)
-                print "Exception type: {} message: {}".format(type(e), e.message)
+                print( "LOG: Could not register and save new account".format(aaccountid))
+                print( "Exception type: {} message: {}".format(type(e), e.message))
                 response = 'Problems creating account for {}. Please try again - or contact representative.'.format(newaccount.name)
-            print response
+            print( response)
             return response
 
 
@@ -56,8 +56,8 @@ def account_deposit(aaccountid, aamount):
         ac.save()  # store an account
         response = 'New account {} created for {}. Initial balance: {}'.format(ac.accountid, ac.name, ac.balance)
     except Exception as e:
-        print "LOG: Could not register and save new account".format(aaccountid)
-        print "Exception type: {} message: {}".format(type(e), e.message)
+        print( "LOG: Could not register and save new account".format(aaccountid))
+        print( "Exception type: {} message: {}".format(type(e), e.message))
         response = 'Problems creating account for {}. Please try again - or contact representative.'.format(ac.name)
     response = "Deposit successful: {}. Balance is now {}".format(aamount, ac.balance)
     return response
@@ -87,8 +87,8 @@ def account_withdraw(aaccountid, aamount):
         ac.save()  # store an account
         response = 'New account {} created for {}. Initial balance: {}'.format(ac.accountid, ac.name, ac.balance)
     except Exception as e:
-        print "LOG: Could not register and save new account".format(aaccountid)
-        print "Exception type: {} message: {}".format(type(e), e.message)
+        print( "LOG: Could not register and save new account".format(aaccountid))
+        print( "Exception type: {} message: {}".format(type(e), e.message))
         response = 'Problems creating account for {}. Please try again - or contact representative.'.format(ac.name)
     response = "Withrawal successful: {}. Balance is now {}".format(aamount, ac.balance)
     return response
@@ -117,13 +117,13 @@ def account_does_exist(aaccountid):
         result = Account.objects.get(accountid=aaccountid)
         return True  # a single account does exist
     except mongoengine.MultipleObjectsReturned:
-        print "LOG: multiple objects returned for account {}".format(aaccountid)
+        print( "LOG: multiple objects returned for account {}".format(aaccountid))
         return True  # multiple records - should not be the case
     except mongoengine.DoesNotExist:
         return False  # account does not exist
     except Exception as e:
-        print "LOG: AccountServices:account_exist: a different error returned than expected for account {}".format(aaccountid)
-        print "Exception type: {} message: {}" .format(type(e), e.message)
+        print( "LOG: AccountServices:account_exist: a different error returned than expected for account {}".format(aaccountid))
+        print( "Exception type: {} message: {}" .format(type(e), e.message))
         return True
 
 def account_validateamount(transamount):
