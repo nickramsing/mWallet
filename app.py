@@ -1,3 +1,4 @@
+import bottle
 from bottle import route, request, run, get, post, template, SimpleTemplate, static_file, url
 #from model.Accounts import *
 import services.AccountServices as AcServices
@@ -9,6 +10,12 @@ import mongoengine as mongoengine
 from twilio.twiml.messaging_response import MessagingResponse
 import logging
 from applog.loggingmodule import setlogger
+
+
+def wsgi_app():
+    """Returns the application to make available through wfastcgi. This is used
+    when the site is published to Microsoft Azure."""
+    return bottle.default_app()
 
 
 @route('/static/<filename>', name='static')

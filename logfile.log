@@ -1,0 +1,20 @@
+2018-09-14 15:02:18,302 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-09-14 15:02:18,884 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-09-14 15:03:00,467 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-09-14 15:03:01,190 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-09-14 15:03:43,023 - __main__ - INFO - === POST came through with data====
+2018-09-14 15:03:43,023 - __main__ - INFO - <type 'list'>
+2018-09-14 15:03:43,025 - __main__ - INFO - in controller determing with route to follow
+2018-09-14 15:03:43,881 - __main__ - INFO - response from controller: Balance for account +14437669188 is 5000.0
+2018-09-14 15:04:03,257 - __main__ - INFO - === POST came through with data====
+2018-09-14 15:04:03,259 - __main__ - INFO - <type 'list'>
+2018-09-14 15:04:03,259 - __main__ - INFO - in controller determing with route to follow
+2018-09-14 15:04:03,644 - __main__ - INFO - response from controller: Deposit successful: 1111.0. Balance is now 6111.0
+2018-09-14 15:04:13,015 - __main__ - INFO - === POST came through with data====
+2018-09-14 15:04:13,016 - __main__ - INFO - <type 'list'>
+2018-09-14 15:04:13,016 - __main__ - INFO - in controller determing with route to follow
+2018-09-14 15:04:13,128 - __main__ - INFO - response from controller: Cannot be transacted for +14437669188. Resulting in below minimum balance. Withdrawal attempt: 7500.0
+2018-09-14 15:04:32,296 - __main__ - INFO - === POST came through with data====
+2018-09-14 15:04:32,296 - __main__ - INFO - <type 'list'>
+2018-09-14 15:04:32,296 - __main__ - INFO - in controller determing with route to follow
+2018-09-14 15:04:32,584 - __main__ - INFO - response from controller: Withrawal successful: 1111.0. Balance is now 5000.0
