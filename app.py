@@ -94,7 +94,7 @@ def sms():
 
 def controller(accountid, routedirection, action_value):
     logger = logging.getLogger(__name__)
-    logger.info('in controller determing with route to follow')
+    logger.info('in controller: determining which route to follow based on routedirection param {}' .format(routedirection))
     # Manages the processing of the SMS?Form data to the appropriate action: REGISTER, DEPOSIT, WITHDRAW, TRANSFER
     # Potential to capture COUNTRY and adapt for multiple contracts/project
     # parameters: phonenumber==accountid, action to perform== routedirection, value associate with action == action_value
@@ -118,7 +118,7 @@ def controller(accountid, routedirection, action_value):
         #response = makewithdrawal(accountid, valueamount)
         response = "We do not offer TRANSFERS at this time."
     else:
-        response = "DO NOT UNDERSTAND DESIRED ACTION.  You can REGISTER, DEPOSIT and WITHDRAW"
+        response = "DO NOT UNDERSTAND DESIRED ACTION.  You can REGISTER, DEPOSIT, WITHDRAW, BALANCE and TRANSFER"
         #need exception handling?!!!
     #print( "response from controller: {}" .format(response))
     logger.info('response from controller: {}' .format(response))
