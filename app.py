@@ -4,13 +4,11 @@ from bottle import route, request, run, get, post, template, SimpleTemplate, sta
 import services.AccountServices as AcServices
 import json
 import sys
-#from bson import json_util
-#import pymongo
 import mongoengine as mongoengine
 from twilio.twiml.messaging_response import MessagingResponse
 import logging
 from applog.loggingmodule import setlogger
-
+import os
 
 def wsgi_app():
     """Returns the application to make available through wfastcgi. This is used
@@ -130,14 +128,27 @@ def controller(accountid, routedirection, action_value):
 if __name__ == '__main__':
     # To run the server, type-in $ python server.py
     setlogger()     #introduces logging configuration to be used with logging
+    logger = logging.getLogger(__name__)
+    logger.info('MAIN: trying to connect to database ')
     try:
         with open('config\dbconfig.json', 'r') as json_data_file:
             dbconfig = json.load(json_data_file)
         #dbconfig_environ = dbconfig['DEV']
         dbconfig_environ = dbconfig['PRODAzure']
+        env_azure = True
         #db =
-        mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
-    except:    #errors.ConnectionFailure:
+        logger.info('DB CONNECT: environment {}' .format(dbconfig_environ))
+        logger.info('State of env_azure {}' .format(env_azure))
+        if env_azure == True:
+            mongoengine.connect(db=os.getenv("DATABASE_NAME"), host=os.getenv("DATABASE_HOST"), port=os.getenv("DATABASE_PORT"))
+            logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
+        else:
+            mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
+        logger.info('DB CONNECT: SUCCESS')
+    #except:    #errors.ConnectionFailure:
+    except Exception as e:
+        logger.error('DB CONNECT: Failed to connect - check log for error mesage')
+        logger.error( "DB Connection exception: Exception type: {} message: {}".format(type(e), e.message))
         print( '===== DB ERROR!  Start the MongoBD, silly guy!')
         sys.exit('MongoDB database connection requires MongoDB to be running.  Start the process')
     run(host='localhost', port=8080, reloader=True)
