@@ -227,3 +227,90 @@
 2018-10-09 22:12:23,750 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
 2018-10-09 22:12:23,750 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
 2018-10-09 22:12:24,421 - __main__ - INFO - response from controller: Balance for account +14437669188 is 7110.0
+2018-10-09 22:22:58,367 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-09 22:22:58,367 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-09 22:22:58,368 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-09 22:22:58,368 - __main__ - INFO - State of env_azure False
+2018-10-09 22:22:58,792 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-09 22:22:59,151 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-09 22:22:59,151 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-09 22:22:59,151 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-09 22:22:59,151 - __main__ - INFO - State of env_azure False
+2018-10-09 22:22:59,525 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-09 22:23:28,145 - __main__ - INFO - === POST came through with data====
+2018-10-09 22:23:28,145 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-09 22:23:28,145 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-09 22:23:29,101 - __main__ - INFO - response from controller: Balance for account +14437669188 is 7110.0
+2018-10-09 22:23:34,641 - __main__ - INFO - === POST came through with data====
+2018-10-09 22:23:34,641 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'deposit 1500'}
+2018-10-09 22:23:34,641 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-09 22:23:34,957 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 8610.0
+2018-10-10 10:06:48,763 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:06:48,763 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:06:48,763 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:06:48,765 - __main__ - INFO - State of env_azure False
+2018-10-10 10:06:49,209 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:06:49,634 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:06:49,634 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:06:49,634 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:06:49,634 - __main__ - INFO - State of env_azure False
+2018-10-10 10:06:50,086 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:07:15,766 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:07:15,766 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-10 10:07:15,766 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-10 10:07:15,766 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-10 10:07:19,413 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:07:19,413 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-10 10:07:19,414 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-10 10:07:50,966 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:07:50,967 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:07:50,967 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:07:50,967 - __main__ - INFO - State of env_azure False
+2018-10-10 10:07:50,967 - __main__ - ERROR - DB CONNECT: Failed to connect - check log for error mesage
+2018-10-10 10:07:50,967 - __main__ - ERROR - DB Connection exception: Exception type: <class 'mongoengine.connection.MongoEngineConnectionError'> message: Cannot connect to database default :
+port must be an instance of int
+2018-10-10 10:13:24,424 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:13:24,424 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:13:24,426 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:13:24,426 - __main__ - INFO - State of env_azure False
+2018-10-10 10:13:24,908 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:13:25,384 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:13:25,384 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:13:25,384 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:13:25,384 - __main__ - INFO - State of env_azure False
+2018-10-10 10:13:25,872 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:13:47,614 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:13:47,614 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-10 10:13:47,615 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-10 10:13:47,615 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-10 10:13:51,164 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:13:51,165 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-10 10:13:51,165 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-10 10:14:04,934 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:14:04,934 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:14:04,934 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:14:04,934 - __main__ - INFO - State of env_azure False
+2018-10-10 10:14:05,358 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:14:05,755 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:14:05,755 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:14:05,756 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:14:05,756 - __main__ - INFO - State of env_azure False
+2018-10-10 10:14:06,153 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:14:20,851 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:14:20,852 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:14:20,852 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:14:20,852 - __main__ - INFO - State of env_azure False
+2018-10-10 10:14:22,022 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:14:22,421 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-10 10:14:22,421 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-10 10:14:22,421 - __main__ - INFO - DB CONNECT: environment {u'port': 10255, u'host': u'mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'db': u'mongodb', u'dbcodeconnection': u'mongoengine', u'dbname': u'mwallet'}
+2018-10-10 10:14:22,421 - __main__ - INFO - State of env_azure False
+2018-10-10 10:14:22,846 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-10 10:14:35,036 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:14:35,038 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-10 10:14:35,038 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-10 10:14:35,038 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-10 10:14:38,068 - __main__ - INFO - === POST came through with data====
+2018-10-10 10:14:38,068 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-10 10:14:38,068 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-10 10:14:39,369 - __main__ - INFO - response from controller: Balance for account +14437669188 is 8610.0

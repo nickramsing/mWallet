@@ -144,8 +144,8 @@ if __name__ == '__main__':
             logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
             logger.info('DB CONNECT: SUCCESS - Azure configuration variables')
         else:
-            mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
-            #mongoengine.connect(host=dbconfig_environ['host'])
+            #mongoengine.connect(db="mongodb", host="mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb", port=int(10255))  #port must be int
+            mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
             logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
         #logger.info('DB CONNECT: SUCCESS')
     #except:    #errors.ConnectionFailure:
