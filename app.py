@@ -136,7 +136,7 @@ if __name__ == '__main__':
             dbconfig = json.load(json_data_file)
         #dbconfig_environ = dbconfig['DEV']
         dbconfig_environ = dbconfig['PRODAzure']
-        env_azure = False
+        env_azure = True
         logger.info('DB CONNECT: environment {}' .format(dbconfig_environ))
         logger.info('State of env_azure {}' .format(env_azure))
         if env_azure == True:
