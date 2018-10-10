@@ -33,13 +33,14 @@ def testmessage():
     logger = logging.getLogger(__name__)
     logger.info('=== POST came through with data====')
     messagedata = dict(request.params)
+    logger.info('== message data: {}' .format(messagedata))
     print( messagedata)     #looks like DICT
     phonenumber = request.forms.get("account")
     smsmessage = request.forms.get("message")
     messagedata = smsmessage.split(" ", 2)  # maxsplit: 2 expect anything over 2 is wrong; validate 1 & 2
     ########### ### validate smsmessage - ensure complies with expectations
-    logger.info(type(messagedata))
-    print( type(messagedata))
+    #logger.info(type(messagedata))
+    #print( type(messagedata))
     if len(messagedata) == 2:
         actiontoperform = str(messagedata[0]).upper()        #ACTION TO BE PERFORMED: first
         action_value = str(messagedata[1])                  #expected text and value:  REGISTER: name; DEPOSIT/WITHDRAW: amount
@@ -135,16 +136,18 @@ if __name__ == '__main__':
             dbconfig = json.load(json_data_file)
         #dbconfig_environ = dbconfig['DEV']
         dbconfig_environ = dbconfig['PRODAzure']
-        env_azure = True
-        #db =
+        env_azure = False
         logger.info('DB CONNECT: environment {}' .format(dbconfig_environ))
         logger.info('State of env_azure {}' .format(env_azure))
         if env_azure == True:
             mongoengine.connect(db=os.getenv("DATABASE_NAME"), host=os.getenv("DATABASE_HOST"), port=os.getenv("DATABASE_PORT"))
             logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
+            logger.info('DB CONNECT: SUCCESS - Azure configuration variables')
         else:
             mongoengine.connect(dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
-        logger.info('DB CONNECT: SUCCESS')
+            #mongoengine.connect(host=dbconfig_environ['host'])
+            logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
+        #logger.info('DB CONNECT: SUCCESS')
     #except:    #errors.ConnectionFailure:
     except Exception as e:
         logger.error('DB CONNECT: Failed to connect - check log for error mesage')

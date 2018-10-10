@@ -4,6 +4,8 @@ from model.Transactions import Transaction     #, Transaction
 import datetime
 
 
+## resource: https://leportella.com/english/2018/08/23/mongo-db-python-and-mongoengine.html
+
 ## Class for mongoengine - interaction with MongoDB
 class Account(mongoengine.Document):
     name = mongoengine.StringField(required=True)
