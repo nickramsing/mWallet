@@ -20,6 +20,12 @@ def wsgi_app():
 def static(filename):
     return static_file(filename, root='static')
 
+@get('/')
+def home():
+    #response="hello"
+    output = template('views/home', get_url=url, encoding='utf8')
+    return output
+
 @get('/testmessage')
 def testmessage():
     response="hello"
@@ -136,9 +142,12 @@ if __name__ == '__main__':
             dbconfig = json.load(json_data_file)
         #dbconfig_environ = dbconfig['DEV']
         dbconfig_environ = dbconfig['PRODAzure']
-        env_azure = True
-        logger.info('DB CONNECT: environment {}' .format(dbconfig_environ))
-        logger.info('State of env_azure {}' .format(env_azure))
+        if dbconfig_environ['use_azure_appvariable'] == "True":
+            env_azure = True    #use the environmental variables from Azure
+        else:
+            env_azure = False   #use the dbconfig settings
+        logger.info('DB CONNECT: environment vars: {}' .format(dbconfig_environ))
+        logger.info('State of env_azure: {}' .format(env_azure))
         if env_azure == True:
             mongoengine.connect(db=os.getenv("DATABASE_NAME"), host=os.getenv("DATABASE_HOST"), port=os.getenv("DATABASE_PORT"))
             logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
