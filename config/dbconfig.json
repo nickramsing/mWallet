@@ -27,8 +27,8 @@
     "use_azure_appvariable":"False",
     "db":"mongodb",
     "dbcodeconnection":"mongoengine",
-    "dbname":"mwallet2",
-    "host":"mongodb://mwallet2:fApIIMwCxl6Ff0jTJ0etYa5xMOTlaevtBbu7tiTGCWllX93gDVc30biMcHxXLn117DVIiQhqRm75AD72Mk9b5A==@mwallet2.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
+    "dbname":"mwalletdb",
+    "host":"mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
     "port":10255
   }
 }

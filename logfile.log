@@ -868,3 +868,65 @@ port must be an instance of int
 2018-10-24 09:27:11,901 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
 2018-10-24 09:27:11,901 - services.AccountServices - INFO - === checking: does account exist? ====
 2018-10-24 09:27:12,634 - __main__ - INFO - response from controller: Balance for account +14437669188 is 5700.0
+2018-10-24 16:56:14,043 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-24 16:56:14,043 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-24 16:56:14,046 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-24 16:56:14,046 - __main__ - INFO - State of env_azure: False
+2018-10-24 16:56:14,609 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-24 16:56:15,210 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-24 16:56:15,210 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-24 16:56:15,210 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-24 16:56:15,210 - __main__ - INFO - State of env_azure: False
+2018-10-24 16:56:15,681 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-24 16:56:36,234 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:56:36,234 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'register'}
+2018-10-24 16:56:36,234 - __main__ - INFO - in controller: determining which route to follow based on routedirection param REGISTER
+2018-10-24 16:56:36,234 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:56:37,907 - services.AccountServices - INFO - LOG: does not exist - account +14437669188
+2018-10-24 16:56:38,030 - __main__ - INFO - response from controller: New account +14437669188 created for . Initial balance: 0
+2018-10-24 16:56:51,867 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:56:51,867 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'deposit 1500'}
+2018-10-24 16:56:51,868 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-24 16:56:51,868 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:56:52,069 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 1500.0
+2018-10-24 16:56:56,858 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:56:56,859 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'deposit 1111'}
+2018-10-24 16:56:56,859 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-24 16:56:56,859 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:56:57,062 - __main__ - INFO - response from controller: Deposit successful: 1111.0. Balance is now 2611.0
+2018-10-24 16:57:02,444 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:02,444 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'withdraw 7500'}
+2018-10-24 16:57:02,444 - __main__ - INFO - in controller: determining which route to follow based on routedirection param WITHDRAW
+2018-10-24 16:57:02,444 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:02,519 - __main__ - INFO - response from controller: Cannot be transacted for +14437669188. Resulting in below minimum balance. Withdrawal attempt: 7500.0
+2018-10-24 16:57:14,951 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:14,951 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'withdraw 1111'}
+2018-10-24 16:57:14,953 - __main__ - INFO - in controller: determining which route to follow based on routedirection param WITHDRAW
+2018-10-24 16:57:14,953 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:15,157 - __main__ - INFO - response from controller: Withrawal successful: 1111.0. Balance is now 1500.0
+2018-10-24 16:57:20,388 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:20,390 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-24 16:57:20,390 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-24 16:57:20,390 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:20,466 - __main__ - INFO - response from controller: Balance for account +14437669188 is 1500.0
+2018-10-24 16:57:27,576 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:27,576 - __main__ - INFO - == message data: {'account': '+14437669053', 'message': 'register'}
+2018-10-24 16:57:27,578 - __main__ - INFO - in controller: determining which route to follow based on routedirection param REGISTER
+2018-10-24 16:57:27,578 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:27,612 - services.AccountServices - INFO - LOG: does not exist - account +14437669053
+2018-10-24 16:57:27,726 - __main__ - INFO - response from controller: New account +14437669053 created for . Initial balance: 0
+2018-10-24 16:57:35,438 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:35,438 - __main__ - INFO - == message data: {'account': '+14437669053', 'message': 'deposit 1500'}
+2018-10-24 16:57:35,440 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-24 16:57:35,440 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:35,635 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 1500.0
+2018-10-24 16:57:43,322 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:43,322 - __main__ - INFO - == message data: {'account': '+14437669053', 'message': 'deposit 1500'}
+2018-10-24 16:57:43,322 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-24 16:57:43,322 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:43,512 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 3000.0
+2018-10-24 16:57:47,539 - __main__ - INFO - === POST came through with data====
+2018-10-24 16:57:47,539 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-24 16:57:47,540 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-24 16:57:47,540 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-24 16:57:47,615 - __main__ - INFO - response from controller: Balance for account +14437669188 is 1500.0
