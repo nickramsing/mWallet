@@ -1,5 +1,6 @@
 {
     "DEV":{
+      "use_azure_appvariable":"False",
       "db":"mongodb",
       "dbcodeconnection":"mongoengine",
       "dbname":"mwallet_test",
@@ -7,6 +8,7 @@
       "port":27017
     },
     "PROD":{
+      "use_azure_appvariable":"False",
       "db":"mongodb",
       "dbcodeconnection":"mongoengine",
       "dbname":"mwallet",
@@ -20,6 +22,14 @@
       "dbname":"mwallet",
       "host":"mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
       "port":10255
-    }
+    },
+    "MEDA":{
+    "use_azure_appvariable":"False",
+    "db":"mongodb",
+    "dbcodeconnection":"mongoengine",
+    "dbname":"mwallet2",
+    "host":"mongodb://mwallet2:fApIIMwCxl6Ff0jTJ0etYa5xMOTlaevtBbu7tiTGCWllX93gDVc30biMcHxXLn117DVIiQhqRm75AD72Mk9b5A==@mwallet2.documents.azure.com:10255/?ssl=true&replicaSet=globaldb",
+    "port":10255
+  }
 }
 

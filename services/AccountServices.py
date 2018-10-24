@@ -1,7 +1,7 @@
 from model.Accounts import Account
 from model.Transactions import Transaction
 import mongoengine as mongoengine
-
+import logging
 
 ## ACCOUNT Business operations:
 #   Register client
@@ -9,6 +9,9 @@ import mongoengine as mongoengine
 #   Withdraw
 #   TBD: Transfer
 #   Supporting functions: does account exist?
+#### changes
+# included logging in does account exist: def account_does_exist(aaccountid)
+
 
 def account_register(aaccountid, personname):
         #Does account already exist?
@@ -113,18 +116,24 @@ def account_find_record(aacountid):
     return account_retrieved
 
 def account_does_exist(aaccountid):
+    logger = logging.getLogger(__name__)
+    logger.info('=== checking: does account exist? ====')
     try:
         result = Account.objects.get(accountid=aaccountid)
         return True  # a single account does exist
     except mongoengine.MultipleObjectsReturned:
         print( "LOG: multiple objects returned for account {}".format(aaccountid))
+        logger.info("LOG: multiple objects returned for account {}".format(aaccountid))
         return True  # multiple records - should not be the case
     except mongoengine.DoesNotExist:
+        logger.info("LOG: does not exist - account {}".format(aaccountid))
         return False  # account does not exist
     except Exception as e:
-        print( "LOG: AccountServices:account_exist: a different error returned than expected for account {}".format(aaccountid))
+        print( "LOG: AccountServices:account_does_exist: a different exception returned than expected for account {}".format(aaccountid))
         print( "Exception type: {} message: {}" .format(type(e), e.message))
-        return True
+        logger.info("LOG: AccountServices:account_does_exist: a different exception returned than expected for account {}".format(aaccountid))
+        logger.info("Exception type: {} message: {}" .format(type(e), e.message))
+        return True         # do not want it creating new account on Register
 
 def account_validateamount(transamount):
     if transamount < 0:

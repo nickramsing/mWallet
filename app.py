@@ -141,7 +141,9 @@ if __name__ == '__main__':
         with open('config\dbconfig.json', 'r') as json_data_file:
             dbconfig = json.load(json_data_file)
         #dbconfig_environ = dbconfig['DEV']
+        #dbconfig_environ = dbconfig['PROD']
         dbconfig_environ = dbconfig['PRODAzure']
+        #dbconfig_environ = dbconfig['PRODAzure2']
         if dbconfig_environ['use_azure_appvariable'] == "True":
             env_azure = True    #use the environmental variables from Azure
         else:
