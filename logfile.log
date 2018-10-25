@@ -1002,3 +1002,72 @@ port must be an instance of int
 2018-10-25 13:31:54,371 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
 2018-10-25 13:31:54,371 - services.AccountServices - INFO - === checking: does account exist? ====
 2018-10-25 13:31:54,571 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 4500.0
+2018-10-25 13:57:39,328 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 13:57:39,328 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 13:57:39,328 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 13:57:39,328 - __main__ - INFO - State of env_azure: False
+2018-10-25 13:57:39,332 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 13:57:40,142 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 13:57:40,142 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 13:57:40,144 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 13:57:40,144 - __main__ - INFO - State of env_azure: False
+2018-10-25 13:57:40,145 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 13:57:53,964 - __main__ - INFO - === POST came through with data====
+2018-10-25 13:57:53,966 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-25 13:57:53,966 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-25 13:57:53,966 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-25 13:58:01,151 - __main__ - INFO - === POST came through with data====
+2018-10-25 13:58:01,151 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-25 13:58:01,151 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-25 13:58:01,151 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-25 13:58:31,236 - services.AccountServices - INFO - LOG: AccountServices:account_does_exist: a different exception returned than expected for account +14437669188
+2018-10-25 13:58:31,236 - services.AccountServices - INFO - Exception type: <class 'pymongo.errors.ServerSelectionTimeoutError'> message: mwalletdb.documents.azure.com:10255: timed out
+2018-10-25 13:59:12,862 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 13:59:12,862 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 13:59:12,864 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 13:59:12,864 - __main__ - INFO - State of env_azure: False
+2018-10-25 13:59:13,523 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 13:59:14,285 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 13:59:14,285 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 13:59:14,285 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 13:59:14,286 - __main__ - INFO - State of env_azure: False
+2018-10-25 13:59:14,960 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 13:59:25,834 - __main__ - INFO - === POST came through with data====
+2018-10-25 13:59:25,835 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-25 13:59:25,835 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-25 13:59:25,835 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-25 13:59:29,345 - __main__ - INFO - === POST came through with data====
+2018-10-25 13:59:29,346 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-25 13:59:29,346 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-25 13:59:29,348 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-25 13:59:29,792 - __main__ - INFO - response from controller: Balance for account +14437669188 is 4500.0
+2018-10-25 14:03:03,999 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 14:03:03,999 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 14:03:04,000 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 14:03:04,000 - __main__ - INFO - State of env_azure: False
+2018-10-25 14:03:04,000 - __main__ - ERROR - DB CONNECT: Failed to connect - check log for error mesage
+2018-10-25 14:03:04,000 - __main__ - ERROR - DB Connection exception: Exception type: <type 'exceptions.NameError'> message: name 'connection' is not defined
+2018-10-25 14:05:21,529 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 14:05:21,529 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 14:05:21,530 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 14:05:21,530 - __main__ - INFO - State of env_azure: False
+2018-10-25 14:05:22,140 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 14:05:22,848 - applog.loggingmodule - INFO - Completed configuring logger()!
+2018-10-25 14:05:22,848 - __main__ - INFO - MAIN: trying to connect to database 
+2018-10-25 14:05:22,848 - __main__ - INFO - DB CONNECT: environment vars: {u'use_azure_appvariable': u'False', u'db': u'mongodb', u'dbname': u'mwalletdb', u'host': u'mongodb://mwalletdb:cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q==@mwalletdb.documents.azure.com:10255/?ssl=true&replicaSet=globaldb', u'dbcodeconnection': u'mongoengine', u'port': 10255}
+2018-10-25 14:05:22,848 - __main__ - INFO - State of env_azure: False
+2018-10-25 14:05:23,367 - __main__ - INFO - DB CONNECT: SUCCESS - dbconfig_environ variables
+2018-10-25 14:05:31,687 - __main__ - INFO - === POST came through with data====
+2018-10-25 14:05:31,687 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'transfer'}
+2018-10-25 14:05:31,688 - __main__ - INFO - in controller: determining which route to follow based on routedirection param TRANSFER
+2018-10-25 14:05:31,688 - __main__ - INFO - response from controller: We do not offer TRANSFERS at this time.
+2018-10-25 14:05:35,401 - __main__ - INFO - === POST came through with data====
+2018-10-25 14:05:35,401 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'balance'}
+2018-10-25 14:05:35,401 - __main__ - INFO - in controller: determining which route to follow based on routedirection param BALANCE
+2018-10-25 14:05:35,401 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-25 14:05:35,762 - __main__ - INFO - response from controller: Balance for account +14437669188 is 4500.0
+2018-10-25 14:05:43,173 - __main__ - INFO - === POST came through with data====
+2018-10-25 14:05:43,173 - __main__ - INFO - == message data: {'account': '+14437669188', 'message': 'deposit 1500'}
+2018-10-25 14:05:43,173 - __main__ - INFO - in controller: determining which route to follow based on routedirection param DEPOSIT
+2018-10-25 14:05:43,174 - services.AccountServices - INFO - === checking: does account exist? ====
+2018-10-25 14:05:43,378 - __main__ - INFO - response from controller: Deposit successful: 1500.0. Balance is now 6000.0

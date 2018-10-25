@@ -156,9 +156,25 @@ if __name__ == '__main__':
             logger.info('DB CONNECT: SUCCESS - Azure configuration variables')
         else:
             #mongoengine.connect(db="mongodb", host="mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb", port=int(10255))  #port must be int
-            #mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
-            mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'])
+            ###mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
+            user = 'mwalletdb'
+            password = 'cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q=='
+            host = 'mwalletdb.documents.azure.com'
+            port = 10255
+            options = "?ssl=true&replicaSet=globaldb"
+            name = 'mwalletdb'
+            hosts_str = "{}:{}".format(host, port)
+            #print(host_str)
+            uri = 'mongodb://{}:{}@{}/{}{}'.format(user, password, hosts_str, name, options)
+            #print(uri)
+            try:
+                mongoengine.connect(name, host=uri)
+            except Exception as e:
+                logger.error('Database connection error: %s', e.message, exc_info=e)
+                raise e
+            ##mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'])
             logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
+
         #logger.info('DB CONNECT: SUCCESS')
     #except:    #errors.ConnectionFailure:
     except Exception as e:
