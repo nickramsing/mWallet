@@ -13,6 +13,7 @@ import os
 def wsgi_app():
     """Returns the application to make available through wfastcgi. This is used
     when the site is published to Microsoft Azure."""
+    setupdbandlogger()
     return bottle.default_app()
 
 
@@ -129,57 +130,47 @@ def controller(accountid, routedirection, action_value):
     logger.info('response from controller: {}' .format(response))
     return response
 
-
-
-
-if __name__ == '__main__':
+####################################
+#if __name__ == '__main__':
+def setupdbandlogger():
     # To run the server, type-in $ python server.py
     setlogger()     #introduces logging configuration to be used with logging
     logger = logging.getLogger(__name__)
     logger.info('MAIN: trying to connect to database ')
+    with open('config\dbconfig.json', 'r') as json_data_file:
+        dbconfig = json.load(json_data_file)
+    #dbconfig_environ = dbconfig['DEV']
+    #dbconfig_environ = dbconfig['PROD']
+    #dbconfig_environ = dbconfig['PRODAzure']
+    dbconfig_environ = dbconfig['MEDA']
     try:
-        with open('config\dbconfig.json', 'r') as json_data_file:
-            dbconfig = json.load(json_data_file)
-        #dbconfig_environ = dbconfig['DEV']
-        #dbconfig_environ = dbconfig['PROD']
-        #dbconfig_environ = dbconfig['PRODAzure']
-        dbconfig_environ = dbconfig['MEDA']
-        if dbconfig_environ['use_azure_appvariable'] == "True":
-            env_azure = True    #use the environmental variables from Azure
-        else:
-            env_azure = False   #use the dbconfig settings
+        #if dbconfig_environ['use_azure_appvariable'] == "True":
+        #    env_azure = True    #use the environmental variables from Azure
+        #else:
+        #    env_azure = False   #use the dbconfig settings
         logger.info('DB CONNECT: environment vars: {}' .format(dbconfig_environ))
-        logger.info('State of env_azure: {}' .format(env_azure))
-        if env_azure == True:
-            mongoengine.connect(db=os.getenv("DATABASE_NAME"), host=os.getenv("DATABASE_HOST"), port=os.getenv("DATABASE_PORT"))
-            logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
-            logger.info('DB CONNECT: SUCCESS - Azure configuration variables')
-        else:
-            #mongoengine.connect(db="mongodb", host="mongodb://mwallet:FhQjypFRRPyR8oNim4Uz18cYT7TyXRtiLuXEv8hG5QWPDtpSZ2pyQW4XI4OVbIn2aP9IzlKPUtRrra3KemGR4g==@mwallet.documents.azure.com:10255/?ssl=true&replicaSet=globaldb", port=int(10255))  #port must be int
-            ###mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
-            user = 'mwalletdb'
-            password = 'cMxYR81wxZmrG5uZJ1iq2gLbrdZIV4qdUvLnAlyiU8q9DV3JTYyfT6zU0D6NmVs3kkKbbFT7OueV1006MJQK7Q=='
-            host = 'mwalletdb.documents.azure.com'
-            port = 10255
-            options = "?ssl=true&replicaSet=globaldb"
-            name = 'mwalletdb'
-            hosts_str = "{}:{}".format(host, port)
-            #print(host_str)
-            uri = 'mongodb://{}:{}@{}/{}{}'.format(user, password, hosts_str, name, options)
-            #print(uri)
-            try:
-                mongoengine.connect(name, host=uri)
-            except Exception as e:
-                logger.error('Database connection error: %s', e.message, exc_info=e)
-                raise e
-            ##mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'])
-            logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
-
-        #logger.info('DB CONNECT: SUCCESS')
-    #except:    #errors.ConnectionFailure:
+        #logger.info('State of env_azure: {}' .format(env_azure))
+        #if env_azure == True:
+        #    mongoengine.connect(db=os.getenv("DATABASE_NAME"), host=os.getenv("DATABASE_HOST"), port=os.getenv("DATABASE_PORT"))
+        #    logger.info('attempting to connect to Azure Cosmos BD in Azure environment: env_azure== {}' .format(env_azure))
+        #    logger.info('DB CONNECT: SUCCESS - Azure configuration variables')
+        #else:
+            ##mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
+        #try:
+        mongoengine.connect(db=dbconfig_environ['dbname'], host=dbconfig_environ['host'], port=dbconfig_environ['port'])
+        #except Exception as e:
+        #    logger.error('Database connection error: %s', e.message, exc_info=e)
+        #    raise e
+        #logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
     except Exception as e:
         logger.error('DB CONNECT: Failed to connect - check log for error mesage')
         logger.error( "DB Connection exception: Exception type: {} message: {}".format(type(e), e.message))
         print( '===== DB ERROR!  Start the MongoBD, silly guy!')
         sys.exit('MongoDB database connection requires MongoDB to be running.  Start the process')
+    logger.info('DB CONNECT: SUCCESS - dbconfig_environ variables')
+    #commented out to run in Azure environment
+
+
+if __name__ == '__main__':
+    wsgi_app()
     run(host='localhost', port=8080, reloader=True)
