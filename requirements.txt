@@ -3,7 +3,7 @@ bottle==0.12.13
 certifi==2018.8.24
 cffi==1.11.5
 chardet==3.0.4
-cryptography==2.3.1
+cryptography==3.2
 enum34==1.1.6
 idna==2.7
 ipaddress==1.0.22
